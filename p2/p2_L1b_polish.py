@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """L1b Step B/C: scaled matrix-free MINRES KKT polish from the OSQP checkpoint.
 
-Same convention as p2_L1_scaled.py (symmetric KKT, lam >= 0, acceptance
-computed on the ORIGINAL unscaled system), plus bulk active-set updates so a
-bad OSQP active set cannot poison the polish.
+Active set is seeded from the OSQP dual (lam = -sK*y >= 0) as in the L1
+pipeline, then repaired by bulk updates. No dense independence filter: the
+Bernstein rows are element-local and linearly independent by construction.
+Acceptance is computed on the ORIGINAL unscaled system.
 """
 from __future__ import annotations
 import json
+import time
 import numpy as np
 import scipy.sparse as sp
 import scipy.sparse.linalg as spla
@@ -14,7 +16,6 @@ import scipy.sparse.linalg as spla
 import p2_audit as A
 from p2_bernstein import B
 from p2_nested_consistency import assemble_p2
-from p2_p3_polish import independent
 
 M = A.M
 V_D = A.V_DRAIN
@@ -54,12 +55,7 @@ def build():
                 idx=idx, C_F=C_F, cD=cD, K=K, Kff=Kff, g=g, f=f, nfree=len(idx))
 
 
-def polish(d, W, u, lam, tag=""):
-    """Run scaled MINRES + residual correction on the given active set."""
-    Kff, C_F, cD, g = d["Kff"], d["C_F"], d["cD"], d["g"]
-    n = d["nfree"]; m = len(W)
-    CW = C_F[W]
-
+def make_op(Kff, CW, n):
     dK = np.maximum(Kff.diagonal(), 1e-12)
     du = 1.0/np.sqrt(dK)
     CWu = CW.multiply(du[None, :])
@@ -73,14 +69,26 @@ def polish(d, W, u, lam, tag=""):
         uu, ll = z[:n], z[n:]
         return D*np.concatenate([Kff@uu - CW.T@ll, -CW@uu])
 
-    Hop = spla.LinearOperator((n+m, n+m), matvec=Hmv, dtype=float)
+    m = CW.shape[0]
+    return spla.LinearOperator((n+m, n+m), matvec=Hmv, dtype=float), D
+
+
+def polish(d, W, u, lam, rtol=1e-8, maxiter=8000, nref=6, tag=""):
+    Kff, C_F, cD, g = d["Kff"], d["C_F"], d["cD"], d["g"]
+    n = d["nfree"]; m = len(W)
+    CW = C_F[W]
+    t0 = time.time()
+    Hop, D = make_op(Kff, CW, n)
     b = np.concatenate([g, cD[W]])
-    zt0 = np.concatenate([u/du, lam/dl])
-    zt, info = spla.minres(Hop, D*b, x0=zt0, rtol=1e-14, maxiter=200000)
+    zt0 = np.concatenate([u/D[:n], lam/D[n:]])
+    print(f"  {tag} MINRES start |W|={m} rtol={rtol:g}", flush=True)
+    zt, info = spla.minres(Hop, D*b, x0=zt0, rtol=rtol, maxiter=maxiter)
+    t1 = time.time()
     z = D*zt
     u = z[:n].copy(); lam = z[n:].copy()
+    print(f"  {tag} MINRES done info={info} ({time.time()-t0:.0f}s)", flush=True)
 
-    for k in range(6):
+    for k in range(nref):
         r = Kff@u - g
         stat = r - CW.T@lam
         slackW = CW@u + cD[W]
@@ -89,9 +97,18 @@ def polish(d, W, u, lam, tag=""):
               flush=True)
         if rel < 5e-10:
             break
-        res = np.concatenate([-stat, -slackW])
-        zt_corr, _ = spla.minres(Hop, D*res, rtol=1e-14, maxiter=200000)
-        zc = D*zt_corr
+        # rho = b - Hx, with H[u;lam] = [K u - C'lam; -C u] and b = [g; cD]:
+        #   rho_u = -(K u - g - C'lam) = -stat
+        #   rho_l = cD + C u          = +slackW
+        # The second block must carry +slackW; -slackW amplifies the
+        # constraint residual every round instead of removing it.
+        res = np.concatenate([-stat, slackW])
+        # corrections need real convergence: the initial tolerance is measured
+        # against ||b||, which is huge, so it reports success far too early.
+        zc_t, cinfo = spla.minres(Hop, D*res, rtol=1e-8, maxiter=8000)
+        print(f"  {tag}   corr {k} done info={cinfo} ({time.time()-t1:.0f}s)", flush=True)
+        t1 = time.time()
+        zc = D*zc_t
         u += zc[:n]; lam += zc[n:]
     return u, lam, int(info)
 
@@ -106,7 +123,7 @@ def gate(d, W, u, lam):
     lam_full = np.zeros(len(cD)); lam_full[W] = lam
     comp = float(np.max(np.abs(lam_full*slack)))
     u_full = d["val"].copy(); u_full[d["idx"]] = u
-    overshoot = float(-u_full.min())
+    overshoot = float(max(0.0, -u_full.min()))
     si_set = set(np.unique(d["tris"][d["si"]]).tolist())
     ox = [int(i) for i in np.unique(d["tris"][d["mat"] == M.OX]) if int(i) not in si_set]
     ox_free = np.intersect1d(np.array(ox, dtype=int), d["idx"])
@@ -118,68 +135,65 @@ def gate(d, W, u, lam):
                 lam_min=float(lam_full.min()))
 
 
+def ok(g):
+    return (g["rel"] < 1e-8 and g["comp"] < 1e-10 and
+            g["slack"].min() >= -1e-9 and g["lam_min"] >= -1e-9 and
+            g["ox"] < 1e-9 and g["overshoot"] < 1e-9)
+
+
 def main():
     d = build()
     chk = np.load("p2_L1b_osqp_checkpoint.npz")
     u = chk["x"].copy()
+    sK = float(chk["sK"])
+    lam_osqp = -sK*chk["y"]
     print(f"[L1b-B] checkpoint status={chk['status']} iters={int(chk['iters'])} "
-          f"free={d['nfree']}", flush=True)
+          f"free={d['nfree']} sK={sK:.3e} lam_max={lam_osqp.max():.3e}", flush=True)
 
-    Kff, C_F, cD = d["Kff"], d["C_F"], d["cD"]
-    slack0 = C_F@u + cD
-    W = np.flatnonzero(slack0 < 1e-7)
-    W = W[independent(C_F[W])]
-    lam = np.zeros(len(W))
-    print(f"[L1b-B] initial |W|={len(W)}", flush=True)
+    C_F, cD = d["C_F"], d["cD"]
+    W = np.flatnonzero(lam_osqp > 1e-8)
+    lam = lam_osqp[W].copy()
+    print(f"[L1b-B] seed |W|={len(W)} (lam>1e-8)", flush=True)
 
     best = None
     for outer in range(6):
         u, lam, info = polish(d, W, u, lam, tag=f"[{outer}]")
-        gres = gate(d, W, u, lam)
-        print(f"  outer {outer}: |W|={len(W)} stat={gres['rel']:.3e} "
-              f"min slack={gres['slack'].min():+.3e} lam_min={gres['lam_min']:+.3e} "
-              f"viol={gres['viol']}", flush=True)
-        ok = (gres["rel"] < 1e-8 and gres["comp"] < 1e-10 and
-              gres["slack"].min() >= -1e-9 and gres["lam_min"] >= -1e-9 and
-              gres["ox"] < 1e-9 and gres["overshoot"] < 1e-9)
-        if best is None or gres["rel"] < best[0]["rel"]:
-            best = (gres, W.copy(), u.copy(), lam.copy())
-        if ok:
+        g = gate(d, W, u, lam)
+        print(f"  outer {outer}: |W|={len(W)} stat={g['rel']:.3e} "
+              f"min slack={g['slack'].min():+.3e} lam_min={g['lam_min']:+.3e} "
+              f"viol={g['viol']}", flush=True)
+        key = (g["rel"], -g["slack"].min())
+        if best is None or key < best[0]:
+            best = (key, g, W.copy(), u.copy(), lam.copy())
+        if ok(g):
             print("  GATE: PASS", flush=True)
             break
-        # bulk active-set update
-        add = np.flatnonzero(gres["slack"] < -1e-12)
-        drop = W[gres["lam_full"][W] < -1e-9]
+        add = np.flatnonzero(g["slack"] < -1e-12)
+        drop = W[g["lam_full"][W] < -1e-9]
         if len(add) == 0 and len(drop) == 0:
-            print("  active set stable, no further bulk update", flush=True)
+            print("  active set stable", flush=True)
             break
-        if len(add):
-            W = np.union1d(W, add)
-        if len(drop):
-            W = np.setdiff1d(W, drop)
-        W = W[independent(C_F[W])]
+        W = np.setdiff1d(np.union1d(W, add), drop)
         lam = np.zeros(len(W))
+        print(f"  update: +{len(add)} -{len(drop)} -> |W|={len(W)}", flush=True)
 
-    gres, W, u, lam = best
+    _, g, W, u, lam = best
     W = np.asarray(W, dtype=int)
-    ok = (gres["rel"] < 1e-8 and gres["comp"] < 1e-10 and
-          gres["slack"].min() >= -1e-9 and gres["lam_min"] >= -1e-9 and
-          gres["ox"] < 1e-9 and gres["overshoot"] < 1e-9)
-    print(f"[L1b] final |W|={len(W)} stat={gres['rel']:.3e} comp={gres['comp']:.3e} "
-          f"min slack={gres['slack'].min():+.3e} viol={gres['viol']} "
-          f"lam_min={gres['lam_min']:+.3e} oxide={gres['ox']:.3e} "
-          f"overshoot={gres['overshoot']:+.3e}", flush=True)
-    print(f"  GATE: {'PASS' if ok else 'FAIL'}", flush=True)
+    passed = ok(g)
+    print(f"[L1b] final |W|={len(W)} stat={g['rel']:.3e} comp={g['comp']:.3e} "
+          f"min slack={g['slack'].min():+.3e} viol={g['viol']} "
+          f"lam_min={g['lam_min']:+.3e} oxide={g['ox']:.3e} "
+          f"overshoot={g['overshoot']:+.3e}", flush=True)
+    print(f"  GATE: {'PASS' if passed else 'FAIL'}", flush=True)
 
     np.savez_compressed("p2_L1b_scaled.npz", nodes=d["nodes"], tris=d["tris"],
-                        mat=d["mat"], u=gres["u_full"], lam=gres["lam_full"],
-                        active=W)
-    json.dump(dict(active=int(len(W)), stationarity=gres["rel"],
-                   complementarity=gres["comp"],
-                   min_slack=float(gres["slack"].min()),
-                   violations=int(gres["viol"]),
-                   lam_min=float(gres["lam_min"]), oxide=gres["ox"],
-                   overshoot=gres["overshoot"], gate=bool(ok),
+                        mat=d["mat"], u=g["u_full"], lam=g["lam_full"], active=W)
+    json.dump(dict(active=int(len(W)), stationarity=g["rel"],
+                   complementarity=g["comp"],
+                   min_slack=float(g["slack"].min()),
+                   violations=int(g["viol"]),
+                   lam_min=float(g["lam_min"]), oxide=g["ox"],
+                   overshoot=float(g["overshoot"]), gate=bool(passed),
                    minres_info=int(info)), open("p2_L1b_scaled.json", "w"), indent=2)
     print("wrote p2_L1b_scaled.npz / .json")
 

@@ -1,0 +1,35 @@
+{
+  "L1": {
+    "label": "L1",
+    "si_elements": 171407,
+    "si_area": 1.954544960806393,
+    "charged_elements": 156623,
+    "charged_area": 1.5752908106232986,
+    "straddle_elements": 220,
+    "straddle_area": 0.004755754820137061,
+    "straddle_above": 0.0025008969740946633,
+    "straddle_below": 0.0022548578460423966,
+    "exact_charged": 1.575254229099076,
+    "exact_body": 0.37929073170731686,
+    "error": 3.6581524222478734e-05,
+    "body_bottom": 0.54
+  },
+  "L1b": {
+    "label": "L1b",
+    "si_elements": 158667,
+    "si_area": 1.954544960806393,
+    "charged_elements": 143799,
+    "charged_area": 1.575280762537182,
+    "straddle_elements": 213,
+    "straddle_area": 0.0046290748476324455,
+    "straddle_above": 0.002314632304878217,
+    "straddle_below": 0.002314442542754229,
+    "exact_charged": 1.5752542290990759,
+    "exact_body": 0.3792907317073171,
+    "error": 2.6533438106213225e-05,
+    "body_bottom": 0.54
+  },
+  "observed_delta": -1.0048086116487553e-05,
+  "predicted_delta": -1.0048086116265509e-05,
+  "residual": -2.220446049250313e-16
+}
