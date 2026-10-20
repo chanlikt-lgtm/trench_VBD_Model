@@ -72,7 +72,7 @@ def fig_increments():
     ax.set_xticklabels(lab)
     ax.set_ylabel("neutral-area increment (µm²)")
     ax.set_title("Interval-bounded area increments\n"
-                 "increments grow as the mesh is refined; they do not decay", fontsize=10)
+                 "increment reduction reverses at the finest local refinement", fontsize=10)
     ax.set_ylim(0, max(up)*1.28)
     fig.tight_layout()
     fig.savefig("fig2_area_increments.png")
