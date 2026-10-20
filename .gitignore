@@ -1,0 +1,11 @@
+# binaries / large artifacts (regenerable)
+*.npz
+*.zip
+*.pyc
+__pycache__/
+
+# LaTeX intermediates
+*.aux
+*.log
+*.out
+*.toc

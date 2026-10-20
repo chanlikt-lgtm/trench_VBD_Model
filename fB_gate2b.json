@@ -1,0 +1,29 @@
+{
+  "stage": "2B mesh gate: Si, SiO2, Gate, Shield",
+  "gmsh_seconds": 11.17,
+  "vertices": 165428,
+  "triangles": 328698,
+  "triangles_by_material": {
+    "Si": 227798,
+    "SiO2": 59034,
+    "Gate": 9366,
+    "Shield": 32500
+  },
+  "faces_by_material": {
+    "Si": 1,
+    "SiO2": 2,
+    "Gate": 2,
+    "Shield": 2
+  },
+  "min_triangle_angle_deg": 35.89504319264927,
+  "max_aspect_ratio": 2.590959373580625,
+  "min_area_um2": 6.338550271030572e-07,
+  "inverted": 0,
+  "clockwise_ordered": 248730,
+  "area_sum_um2": 3.2670000000000003,
+  "analytic_domain_area_um2": 3.267,
+  "area_rel_error": 1.3593180589227507e-16,
+  "triangles_spanning_two_materials": 0,
+  "conformity_ok": true,
+  "separate_gate_and_shield_groups": true
+}

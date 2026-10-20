@@ -1,0 +1,13 @@
+{
+  "constraints": 939738,
+  "free": 375812,
+  "min_slack": -4.8873180646020364e-11,
+  "violations": 0,
+  "lam_min": -9.92237865653121e-16,
+  "lam_max": 0.00196024783599919,
+  "stationarity": 6.421634448931129e-05,
+  "complementarity": 7.750818929076365e-12,
+  "oxide": 4.405364961712621e-12,
+  "overshoot": 8.979352724116419e-12,
+  "gate": false
+}

@@ -1,0 +1,44 @@
+{
+  "r3": {
+    "constraints": 300222,
+    "active": 646,
+    "min_slack": -1.8713329497099807e-16,
+    "violations": 0,
+    "lam_min": 0.0,
+    "lam_max": 0.1258135053998021,
+    "inact_nonzero": 0,
+    "stationarity": 6.687248029559759e-11,
+    "complementarity": 8.580522295352574e-18,
+    "oxide": 1.8047785488306545e-12,
+    "overshoot": 9.84455572616838e-17,
+    "gate": true
+  },
+  "r4": {
+    "constraints": 583674,
+    "active": 1219,
+    "min_slack": -2.336455681706262e-16,
+    "violations": 0,
+    "lam_min": 0.0,
+    "lam_max": 0.0698401463583238,
+    "inact_nonzero": 0,
+    "stationarity": 1.481845094201392e-10,
+    "complementarity": 5.868276236954414e-18,
+    "oxide": 3.510081114654895e-12,
+    "overshoot": 1.2679744407217974e-16,
+    "gate": true
+  },
+  "mid": {
+    "constraints": 797268,
+    "active": 1666,
+    "min_slack": -4.2977774117325396e-16,
+    "violations": 0,
+    "lam_min": 0.0,
+    "lam_max": 0.04815127319740538,
+    "inact_nonzero": 0,
+    "stationarity": 2.218787261287885e-10,
+    "complementarity": 5.163472423375864e-18,
+    "oxide": 4.746425474877469e-12,
+    "overshoot": 2.2280354644577116e-16,
+    "gate": true
+  }
+}

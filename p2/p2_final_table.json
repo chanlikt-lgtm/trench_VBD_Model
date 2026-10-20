@@ -1,0 +1,169 @@
+{
+  "d_ref": 282.9836774371259,
+  "resolutions": {
+    "r3": {
+      "h": 0.014,
+      "total": 1144,
+      "wall": {
+        "all": {
+          "label": "r3/wall/all",
+          "n": 896,
+          "R_abs": 0.013878671484895869,
+          "R_signed": 0.006794513116767642,
+          "rel_median": 0.005352027239263014,
+          "rel_mean": 0.06386132999933251,
+          "rel_p95": 1.0,
+          "rel_max": 1.0,
+          "near_zero": 127,
+          "opp_sign": 170,
+          "mean_d_si": -252.83155649588346,
+          "mean_d_ox": -254.94018750539428
+        },
+        "interface": {
+          "label": "r3/wall/interface",
+          "n": 728,
+          "R_abs": 0.01107870715051061,
+          "R_signed": 0.009623621783239653,
+          "rel_median": 0.004679332701801941,
+          "rel_mean": 0.011139234573470765,
+          "rel_p95": 0.013460430150739154,
+          "rel_max": 1.0,
+          "near_zero": 0,
+          "opp_sign": 2,
+          "mean_d_si": -311.1773003026258,
+          "mean_d_ox": -314.32523942970596
+        },
+        "electrode": {
+          "label": "r3/wall/electrode",
+          "n": 168,
+          "R_abs": 2.0,
+          "R_signed": 2.0,
+          "rel_median": 1.0,
+          "rel_mean": 1.0,
+          "rel_p95": 1.0,
+          "rel_max": 1.0,
+          "near_zero": 127,
+          "opp_sign": 168,
+          "mean_d_si": 0.0,
+          "mean_d_ox": 2.3950374999561928
+        }
+      },
+      "arc": {
+        "all": {
+          "label": "r3/arc/all",
+          "n": 248,
+          "R_abs": 0.03392205091712172,
+          "R_signed": 0.0016292688373654304,
+          "rel_median": 0.007108503327332667,
+          "rel_mean": 0.013713757347436175,
+          "rel_p95": 0.04444982764251279,
+          "rel_max": 0.2854539707505687,
+          "near_zero": 0,
+          "opp_sign": 0,
+          "mean_d_si": -389.79321540327265,
+          "mean_d_ox": -387.93741120686934
+        },
+        "interface": {
+          "label": "r3/arc/interface",
+          "n": 248,
+          "R_abs": 0.03392205091712172,
+          "R_signed": 0.0016292688373654304,
+          "rel_median": 0.007108503327332667,
+          "rel_mean": 0.013713757347436175,
+          "rel_p95": 0.04444982764251279,
+          "rel_max": 0.2854539707505687,
+          "near_zero": 0,
+          "opp_sign": 0,
+          "mean_d_si": -389.79321540327265,
+          "mean_d_ox": -387.93741120686934
+        },
+        "electrode": {
+          "label": "r3/arc/electrode",
+          "n": 0
+        }
+      }
+    },
+    "r4": {
+      "h": 0.01,
+      "total": 1584,
+      "wall": {
+        "all": {
+          "label": "r4/wall/all",
+          "n": 1246,
+          "R_abs": 0.011481763881016564,
+          "R_signed": 0.003580365704051372,
+          "rel_median": 0.0038520044091747844,
+          "rel_mean": 0.06302166250966947,
+          "rel_p95": 1.0,
+          "rel_max": 1.0,
+          "near_zero": 177,
+          "opp_sign": 237,
+          "mean_d_si": -252.77841972040213,
+          "mean_d_ox": -254.08213747546387
+        },
+        "interface": {
+          "label": "r4/wall/interface",
+          "n": 1014,
+          "R_abs": 0.009343106085288759,
+          "R_signed": 0.005735222868873345,
+          "rel_median": 0.0033715595095267455,
+          "rel_mean": 0.01219936609747204,
+          "rel_p95": 0.009798771042645503,
+          "rel_max": 1.0,
+          "near_zero": 0,
+          "opp_sign": 5,
+          "mean_d_si": -310.6133244296065,
+          "mean_d_ox": -312.63849401641
+        },
+        "electrode": {
+          "label": "r4/wall/electrode",
+          "n": 232,
+          "R_abs": 2.0,
+          "R_signed": 2.0,
+          "rel_median": 1.0,
+          "rel_mean": 1.0,
+          "rel_p95": 1.0,
+          "rel_max": 1.0,
+          "near_zero": 177,
+          "opp_sign": 232,
+          "mean_d_si": 0.0,
+          "mean_d_ox": 1.849524302636702
+        }
+      },
+      "arc": {
+        "all": {
+          "label": "r4/arc/all",
+          "n": 338,
+          "R_abs": 0.026611918360208618,
+          "R_signed": 0.0011613094542186504,
+          "rel_median": 0.00467533847132465,
+          "rel_mean": 0.010417761878280333,
+          "rel_p95": 0.03031152171138763,
+          "rel_max": 0.26840987224929724,
+          "near_zero": 0,
+          "opp_sign": 0,
+          "mean_d_si": -390.51004055767237,
+          "mean_d_ox": -388.89843260062366
+        },
+        "interface": {
+          "label": "r4/arc/interface",
+          "n": 338,
+          "R_abs": 0.026611918360208618,
+          "R_signed": 0.0011613094542186504,
+          "rel_median": 0.00467533847132465,
+          "rel_mean": 0.010417761878280333,
+          "rel_p95": 0.03031152171138763,
+          "rel_max": 0.26840987224929724,
+          "near_zero": 0,
+          "opp_sign": 0,
+          "mean_d_si": -390.51004055767237,
+          "mean_d_ox": -388.89843260062366
+        },
+        "electrode": {
+          "label": "r4/arc/electrode",
+          "n": 0
+        }
+      }
+    }
+  }
+}

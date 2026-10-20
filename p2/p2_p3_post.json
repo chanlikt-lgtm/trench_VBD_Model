@@ -1,0 +1,10 @@
+{
+  "bernstein_active_area": 0.03506461719269121,
+  "bernstein_active_elements": 480,
+  "any_node_area": 0.03506461719269121,
+  "all_nodes_area": 0.020917675076900386,
+  "near_zero_nodes": 758,
+  "max_x_near_zero": 2.42,
+  "phi_max": 34.2742085360108,
+  "overshoot": 1.0800249583553523e-11
+}

@@ -1,0 +1,14 @@
+{
+  "status": "solved",
+  "iters": 15225,
+  "free": 328393,
+  "constraints": 797268,
+  "active": 1666,
+  "stationarity": 2.218787261287885e-10,
+  "min_slack": -4.2977774117325396e-16,
+  "lam_min": 0.0,
+  "lam_max": 0.04815127319740538,
+  "complementarity": 5.163472423375864e-18,
+  "overshoot": 0.0,
+  "neutral_area": 0.021781461232474618
+}

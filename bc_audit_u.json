@@ -1,0 +1,39 @@
+{
+  "stage": "2B.1 corrected: obstacle on u = V_D - phi",
+  "transform": {
+    "f_u_scale": 0.5568809971141476,
+    "u_D_source_body_gate_shield": 34.274208536,
+    "u_D_drain": 0.0
+  },
+  "linear_operator": {
+    "R_free_u": 1.6312506840609002e-15,
+    "finite": true
+  },
+  "linear_solution_diagnostics": {
+    "silicon_overshoot_max_V": 0.21254997312667828,
+    "silicon_min_u_V": -0.21254997312667828,
+    "overshoot_is_at_unconstrained_silicon": true
+  },
+  "complementarity": {
+    "iterations": 6,
+    "primal_min_u_silicon_V": 0.0,
+    "primal_ok": true,
+    "dual_min_r_silicon": -9.73610081445031e-13,
+    "dual_ok": true,
+    "complementarity_max_abs": 4.389198436586397e-11,
+    "complementarity_normalised": 2.299616322971593e-12,
+    "oxide_equilibrium_rel": 7.0807861766180626e-12,
+    "active_nodes": 70,
+    "active_in_oxide": 0,
+    "active_silicon_area_um2": 0.020330952123159003,
+    "silicon_area_um2": 1.954558180854431,
+    "interface_reaction_sum": 1.0400048877645673e-12,
+    "interface_reaction_normalised": 1.867553199254509e-12,
+    "interface_free_nodes": 336
+  },
+  "potential": {
+    "min": 0.0,
+    "max": 34.274208536,
+    "reconstruction_ok": true
+  }
+}

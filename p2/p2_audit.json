@@ -1,0 +1,224 @@
+{
+  "local_load": {
+    "samples": [
+      {
+        "element": 0,
+        "area": 6.839564111219943e-05,
+        "integrals": [
+          -3.3881317890172014e-21,
+          -3.3881317890172014e-21,
+          4.235164736271502e-21,
+          4.559709407479962e-05,
+          4.5597094074799624e-05,
+          4.5597094074799624e-05
+        ],
+        "vertex_max_abs": 4.235164736271502e-21,
+        "midside_rel_err": 1.0
+      },
+      {
+        "element": 13902,
+        "area": 2.1884645172449278e-05,
+        "integrals": [
+          -1.2705494208814505e-21,
+          -1.2705494208814505e-21,
+          1.4823076576950256e-21,
+          1.4589763448299518e-05,
+          1.4589763448299522e-05,
+          1.4589763448299522e-05
+        ],
+        "vertex_max_abs": 1.4823076576950256e-21,
+        "midside_rel_err": 1.0000000000000004
+      },
+      {
+        "element": 27804,
+        "area": 2.03445817687734e-05,
+        "integrals": [
+          -1.2705494208814505e-21,
+          -1.2705494208814505e-21,
+          1.0587911840678754e-21,
+          1.35630545125156e-05,
+          1.3563054512515604e-05,
+          1.3563054512515604e-05
+        ],
+        "vertex_max_abs": 1.2705494208814505e-21,
+        "midside_rel_err": 1.0000000000000004
+      },
+      {
+        "element": 41706,
+        "area": 4.635410239242998e-05,
+        "integrals": [
+          -2.541098841762901e-21,
+          -2.541098841762901e-21,
+          2.964615315390051e-21,
+          3.0902734928286654e-05,
+          3.090273492828666e-05,
+          3.090273492828666e-05
+        ],
+        "vertex_max_abs": 2.964615315390051e-21,
+        "midside_rel_err": 1.0000000000000004
+      },
+      {
+        "element": 55609,
+        "area": 8.526564073829318e-06,
+        "integrals": [
+          -6.352747104407253e-22,
+          -6.352747104407253e-22,
+          6.352747104407253e-22,
+          5.684376049219545e-06,
+          5.684376049219547e-06,
+          5.684376049219546e-06
+        ],
+        "vertex_max_abs": 6.352747104407253e-22,
+        "midside_rel_err": 1.0000000000000002
+      }
+    ],
+    "worst_vertex_rel": 7.450535818883731e-17,
+    "worst_midside_rel": 1.0000000000000004,
+    "pass_": false
+  },
+  "coincident": {
+    "n_groups": 4,
+    "groups": [
+      {
+        "coordinate": [
+          2.05,
+          -0.525
+        ],
+        "members": [
+          {
+            "node": 1,
+            "x": 2.05,
+            "y": -0.525,
+            "referenced": false,
+            "n_elements": 0,
+            "materials": []
+          },
+          {
+            "node": 16,
+            "x": 2.05,
+            "y": -0.525,
+            "referenced": false,
+            "n_elements": 0,
+            "materials": []
+          }
+        ],
+        "n_referenced": 0,
+        "n_orphan": 2,
+        "classification": "unused_duplicate"
+      },
+      {
+        "coordinate": [
+          2.05,
+          0.525
+        ],
+        "members": [
+          {
+            "node": 0,
+            "x": 2.05,
+            "y": 0.525,
+            "referenced": false,
+            "n_elements": 0,
+            "materials": []
+          },
+          {
+            "node": 7,
+            "x": 2.05,
+            "y": 0.525,
+            "referenced": false,
+            "n_elements": 0,
+            "materials": []
+          }
+        ],
+        "n_referenced": 0,
+        "n_orphan": 2,
+        "classification": "unused_duplicate"
+      },
+      {
+        "coordinate": [
+          2.42,
+          -0.675
+        ],
+        "members": [
+          {
+            "node": 19,
+            "x": 2.42,
+            "y": -0.675,
+            "referenced": false,
+            "n_elements": 0,
+            "materials": []
+          },
+          {
+            "node": 25,
+            "x": 2.42,
+            "y": -0.675,
+            "referenced": true,
+            "n_elements": 2,
+            "materials": [
+              "SiO2"
+            ]
+          }
+        ],
+        "n_referenced": 1,
+        "n_orphan": 1,
+        "classification": "unused_duplicate"
+      },
+      {
+        "coordinate": [
+          2.42,
+          0.675
+        ],
+        "members": [
+          {
+            "node": 10,
+            "x": 2.42,
+            "y": 0.675,
+            "referenced": false,
+            "n_elements": 0,
+            "materials": []
+          },
+          {
+            "node": 36,
+            "x": 2.42,
+            "y": 0.675,
+            "referenced": true,
+            "n_elements": 2,
+            "materials": [
+              "SiO2"
+            ]
+          }
+        ],
+        "n_referenced": 1,
+        "n_orphan": 1,
+        "classification": "unused_duplicate"
+      }
+    ]
+  },
+  "compaction": {
+    "nodes_before": 152767,
+    "used": 152489,
+    "orphans": 278
+  },
+  "engine": {
+    "dofs": 152489,
+    "free": 123867,
+    "unused_after_compaction": 0,
+    "zero_diagonal_free": 0,
+    "min_free_diagonal": 6.4836207283816245,
+    "nonfinite": 0,
+    "components": 114230,
+    "unanchored": 92998,
+    "gate_shield_shared": 0,
+    "interface_shared": 1146,
+    "charge": 2440.3801081193265,
+    "charge_analytic": 2440.3801081193265,
+    "charge_rel_error": 0.0,
+    "gate_nodes": 5104,
+    "shield_nodes": 12074,
+    "pass_": false
+  },
+  "manufactured": {
+    "max_interior_residual": 0.2547781046518338,
+    "scale": 0.831979363987017,
+    "note": "quadratic reproduced exactly by P2; residual is quadrature error only"
+  }
+}

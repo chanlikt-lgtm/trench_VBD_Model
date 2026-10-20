@@ -1,0 +1,500 @@
+{
+  "r5": {
+    "tag": "r5",
+    "triangles": 298355,
+    "active_nodes": 584,
+    "active_nodes_on_drain_plane": 0,
+    "neutral_area_um2": 0.02144795489518706,
+    "silicon_area_um2": 1.9545440248501476,
+    "p1_neutral_area_um2": 0.021291975064505676,
+    "p1_fraction": 0.010893576606000524,
+    "neutral_fraction": 0.010973380298676796,
+    "bbox": {
+      "xmin": 2.3343004587696807,
+      "xmax": 2.415207536181184,
+      "ymin": -0.20921402413750986,
+      "ymax": 0.2102462251123551
+    },
+    "components": {
+      "count": 1,
+      "drain_connected": true,
+      "bridging_elements": 125,
+      "bridging_active_nodes": 63,
+      "gap_to_drain_um": 0.0047924638188159285,
+      "sizes": [
+        584
+      ]
+    },
+    "fronts": {
+      "2.05": {
+        "x": 2.05,
+        "neg": null,
+        "pos": null
+      },
+      "2.10": {
+        "x": 2.1,
+        "neg": null,
+        "pos": null
+      },
+      "2.15": {
+        "x": 2.15,
+        "neg": null,
+        "pos": null
+      },
+      "2.20": {
+        "x": 2.2,
+        "neg": null,
+        "pos": null
+      },
+      "2.30": {
+        "x": 2.3,
+        "neg": null,
+        "pos": null
+      },
+      "2.35": {
+        "x": 2.35,
+        "neg": -0.11185655927987516,
+        "pos": 0.11415214196986226
+      },
+      "2.40": {
+        "x": 2.4,
+        "neg": -0.20921402413750986,
+        "pos": 0.2102462251123551
+      }
+    },
+    "asymmetry_um": {
+      "2.35": 0.0022955826899870996,
+      "2.40": 0.0010322009748452432
+    },
+    "threshold_sensitivity": {
+      "tol=1e-09": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11185655927987516,
+          "pos": 0.11415214196986226
+        },
+        "2.40": {
+          "neg": -0.20921402413750986,
+          "pos": 0.2102462251123551
+        }
+      },
+      "tol=1e-06": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11185655927987516,
+          "pos": 0.11415214196986226
+        },
+        "2.40": {
+          "neg": -0.20921402413750986,
+          "pos": 0.2102462251123551
+        }
+      },
+      "tol=0.001": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11813471985346743,
+          "pos": 0.12049257658071938
+        },
+        "2.40": {
+          "neg": -0.21609966904829483,
+          "pos": 0.21741792982393648
+        }
+      }
+    },
+    "solver": {
+      "iterations": 13,
+      "primal_min_u": 0.0,
+      "dual_min_r": -1.4786782909226304e-12,
+      "complementarity_norm": 2.0927175517129095e-11
+    }
+  },
+  "fA": {
+    "tag": "fA",
+    "triangles": 290465,
+    "active_nodes": 2058,
+    "active_nodes_on_drain_plane": 0,
+    "neutral_area_um2": 0.021668880692147143,
+    "silicon_area_um2": 1.9545440248501478,
+    "p1_neutral_area_um2": 0.02148414438292108,
+    "p1_fraction": 0.01099189586408433,
+    "neutral_fraction": 0.011086412184452313,
+    "bbox": {
+      "xmin": 2.335603016580002,
+      "xmax": 2.4181386837792282,
+      "ymin": -0.21318651509084593,
+      "ymax": 0.21291702646334937
+    },
+    "components": {
+      "count": 1,
+      "drain_connected": true,
+      "bridging_elements": 247,
+      "bridging_active_nodes": 123,
+      "gap_to_drain_um": 0.0018613162207716805,
+      "sizes": [
+        2058
+      ]
+    },
+    "fronts": {
+      "2.05": {
+        "x": 2.05,
+        "neg": null,
+        "pos": null
+      },
+      "2.10": {
+        "x": 2.1,
+        "neg": null,
+        "pos": null
+      },
+      "2.15": {
+        "x": 2.15,
+        "neg": null,
+        "pos": null
+      },
+      "2.20": {
+        "x": 2.2,
+        "neg": null,
+        "pos": null
+      },
+      "2.30": {
+        "x": 2.3,
+        "neg": null,
+        "pos": null
+      },
+      "2.35": {
+        "x": 2.35,
+        "neg": -0.11289517539555818,
+        "pos": 0.11347545941532916
+      },
+      "2.40": {
+        "x": 2.4,
+        "neg": -0.21318651509084593,
+        "pos": 0.21291702646334937
+      }
+    },
+    "asymmetry_um": {
+      "2.35": 0.0005802840197709769,
+      "2.40": 0.0002694886274965669
+    },
+    "threshold_sensitivity": {
+      "tol=1e-09": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11289517539555818,
+          "pos": 0.11347545941532916
+        },
+        "2.40": {
+          "neg": -0.21318651509084593,
+          "pos": 0.21291702646334937
+        }
+      },
+      "tol=1e-06": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11289517539555818,
+          "pos": 0.11347545941532916
+        },
+        "2.40": {
+          "neg": -0.21318651509084593,
+          "pos": 0.21291702646334937
+        }
+      },
+      "tol=0.001": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11989441403698758,
+          "pos": 0.12397498825696256
+        },
+        "2.40": {
+          "neg": -0.22719230111070762,
+          "pos": 0.22312513948545268
+        }
+      }
+    },
+    "solver": {
+      "iterations": 19,
+      "primal_min_u": 0.0,
+      "dual_min_r": -1.8198012541326136e-12,
+      "complementarity_norm": 2.4429968229417778e-11
+    }
+  },
+  "fB": {
+    "tag": "fB",
+    "triangles": 328698,
+    "active_nodes": 8243,
+    "active_nodes_on_drain_plane": 0,
+    "neutral_area_um2": 0.02171242967320544,
+    "silicon_area_um2": 1.9545440248501478,
+    "p1_neutral_area_um2": 0.021633750940439237,
+    "p1_fraction": 0.011068438809966365,
+    "neutral_fraction": 0.011108693074779987,
+    "bbox": {
+      "xmin": 2.3350010036096887,
+      "xmax": 2.41905516563853,
+      "ymin": -0.21736164428167679,
+      "ymax": 0.21738577675431378
+    },
+    "components": {
+      "count": 1,
+      "drain_connected": true,
+      "bridging_elements": 505,
+      "bridging_active_nodes": 254,
+      "gap_to_drain_um": 0.0009448343614697485,
+      "sizes": [
+        8243
+      ]
+    },
+    "fronts": {
+      "2.05": {
+        "x": 2.05,
+        "neg": null,
+        "pos": null
+      },
+      "2.10": {
+        "x": 2.1,
+        "neg": null,
+        "pos": null
+      },
+      "2.15": {
+        "x": 2.15,
+        "neg": null,
+        "pos": null
+      },
+      "2.20": {
+        "x": 2.2,
+        "neg": null,
+        "pos": null
+      },
+      "2.30": {
+        "x": 2.3,
+        "neg": null,
+        "pos": null
+      },
+      "2.35": {
+        "x": 2.35,
+        "neg": -0.11476035515412807,
+        "pos": 0.11343724721831755
+      },
+      "2.40": {
+        "x": 2.4,
+        "neg": -0.21736164428167679,
+        "pos": 0.21738577675431378
+      }
+    },
+    "asymmetry_um": {
+      "2.35": 0.0013231079358105163,
+      "2.40": 2.413247263699514e-05
+    },
+    "threshold_sensitivity": {
+      "tol=1e-09": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11476035515412807,
+          "pos": 0.11343724721831755
+        },
+        "2.40": {
+          "neg": -0.21736164428167679,
+          "pos": 0.21738577675431378
+        }
+      },
+      "tol=1e-06": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.11476035515412807,
+          "pos": 0.11343724721831755
+        },
+        "2.40": {
+          "neg": -0.21736164428167679,
+          "pos": 0.21738577675431378
+        }
+      },
+      "tol=0.001": {
+        "2.05": {
+          "neg": null,
+          "pos": null
+        },
+        "2.10": {
+          "neg": null,
+          "pos": null
+        },
+        "2.15": {
+          "neg": null,
+          "pos": null
+        },
+        "2.20": {
+          "neg": null,
+          "pos": null
+        },
+        "2.30": {
+          "neg": null,
+          "pos": null
+        },
+        "2.35": {
+          "neg": -0.1245037593504939,
+          "pos": 0.12318065141457454
+        },
+        "2.40": {
+          "neg": -0.2366555402358357,
+          "pos": 0.23824543499538675
+        }
+      }
+    },
+    "solver": {
+      "iterations": 35,
+      "primal_min_u": 0.0,
+      "dual_min_r": -1.642276592495051e-12,
+      "complementarity_norm": 2.2045279457030952e-11
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "solve": {
+    "free": 123867,
+    "R_free": 9.935951517746707e-15,
+    "finite": true,
+    "phi_min": 0.0,
+    "phi_max": 34.274208536,
+    "residual_norm": 1.6916988636019246e-10
+  },
+  "interface": {
+    "nodes": 1146,
+    "d_si_mean": 229.9709714545699,
+    "d_ox_mean": 246.139968149841,
+    "mismatch_median": 0.02455601113637547,
+    "mismatch_mean": 0.25098585461064044,
+    "mismatch_p95": 1.0,
+    "mismatch_max": 1.8592847000006067,
+    "integral_si": 263546.7332869371,
+    "integral_ox": 282076.40349971777,
+    "integral_rel": 0.06569025265099564
+  }
+}

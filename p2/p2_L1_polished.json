@@ -1,0 +1,10 @@
+{
+  "active": 19845,
+  "stationarity": 4.0476724870421616e-07,
+  "complementarity": 1.8767908501855322e-12,
+  "min_slack": -9.64463095732208e-10,
+  "lam_min": 0.0,
+  "oxide": 3.294782224827486e-10,
+  "overshoot": 4.858518152782074e-10,
+  "gate": false
+}

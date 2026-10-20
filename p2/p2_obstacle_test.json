@@ -1,0 +1,11 @@
+{
+  "status": "solved",
+  "iters": 150,
+  "unconstrained_min_b": -0.07652243589743572,
+  "min_slack": -1.734723475976807e-18,
+  "active": 256,
+  "lam_min": -0.0,
+  "comp": 4.9483149479050485e-20,
+  "oxide_res": 1.647663026855176e-14,
+  "sample_min": -8.91892447675866e-25
+}

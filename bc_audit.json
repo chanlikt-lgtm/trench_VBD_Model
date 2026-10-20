@@ -1,0 +1,103 @@
+{
+  "stage": "2B.1 assembled BC + charge audit",
+  "groups": {
+    "Si": {
+      "faces": 1,
+      "nodes": 13902,
+      "condition": "semiconductor (unknown)"
+    },
+    "SiO2": {
+      "faces": 2,
+      "nodes": 3383,
+      "condition": "dielectric (unknown)"
+    },
+    "Gate": {
+      "faces": 2,
+      "nodes": 684,
+      "condition": "Dirichlet V_G=0.0"
+    },
+    "Shield": {
+      "faces": 2,
+      "nodes": 1620,
+      "condition": "Dirichlet V_SG=0.0"
+    }
+  },
+  "electrode_isolation": {
+    "gate_shield_shared_nodes": 0,
+    "gate_oxide_shared_nodes": 94,
+    "shield_oxide_shared_nodes": 176,
+    "gate_silicon_shared_nodes": 0,
+    "shield_silicon_shared_nodes": 0,
+    "electrically_separate": true
+  },
+  "dirichlet": {
+    "source": {
+      "nodes": 35,
+      "V": 0.0
+    },
+    "body": {
+      "nodes": 1419,
+      "V": 0.0
+    },
+    "drain": {
+      "nodes": 59,
+      "V": 34.274208536
+    },
+    "gate": {
+      "nodes": 684,
+      "V": 0.0
+    },
+    "shield": {
+      "nodes": 1620,
+      "V": 0.0
+    },
+    "total_fixed_nodes": 3782,
+    "free_nodes": 15235
+  },
+  "interface": {
+    "shared_nodes": 398,
+    "silicon_only_nodes": 13504,
+    "oxide_only_nodes": 2985,
+    "conforming": true
+  },
+  "neumann": {
+    "outer_pitch_edge_nodes": 244
+  },
+  "charge": {
+    "rho_V_per_um2": 1248.5638444012202,
+    "silicon_area_um2": 1.954558180854431,
+    "integrated_charge": 2440.3906763934638,
+    "analytic_rho_area": 2440.3906763934638,
+    "relative_error": 0.0,
+    "oxide_nodes_with_charge": 398,
+    "metal_nodes_with_charge": 0
+  },
+  "linear_system": {
+    "free_nodes": 15235,
+    "free_nodes_with_zero_diagonal": 96,
+    "min_free_diagonal": 0.0,
+    "matrix_nnz": 131681
+  },
+  "complementarity": {
+    "iterations": 1,
+    "scaled_residual": NaN,
+    "active_nodes_total": 0,
+    "active_in_silicon": 0,
+    "active_in_oxide": 0,
+    "silicon_only": true
+  },
+  "potential": {
+    "min": NaN,
+    "max": NaN,
+    "at_source": 0.0,
+    "at_drain": 34.274208536,
+    "at_gate": 0.0,
+    "at_shield": 0.0
+  },
+  "interface_flux": {
+    "edges_checked": 396,
+    "median_relative_jump": NaN,
+    "p95_relative_jump": NaN,
+    "max_relative_jump": NaN
+  }
+}

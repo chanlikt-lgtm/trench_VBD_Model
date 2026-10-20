@@ -1,0 +1,76 @@
+{
+  "stage": "2B.1 repeat: compacted mesh + linear operator test",
+  "engine": {
+    "orphan_nodes_before": 96,
+    "orphans_on_dirichlet_surface": [
+      {
+        "index": 2,
+        "x": 0.0,
+        "y": 0.44000000000000006,
+        "source": true,
+        "drain": false,
+        "gate": false,
+        "shield": false
+      },
+      {
+        "index": 10,
+        "x": 2.42,
+        "y": 0.675,
+        "source": false,
+        "drain": true,
+        "gate": false,
+        "shield": false
+      },
+      {
+        "index": 11,
+        "x": 0.0,
+        "y": -0.44000000000000006,
+        "source": true,
+        "drain": false,
+        "gate": false,
+        "shield": false
+      },
+      {
+        "index": 19,
+        "x": 2.42,
+        "y": -0.675,
+        "source": false,
+        "drain": true,
+        "gate": false,
+        "shield": false
+      }
+    ],
+    "nodes_after_compaction": 18921,
+    "triangles": 37460,
+    "unused_2d_nodes_after": 0,
+    "free_nodes": 15139,
+    "free_nodes_zero_diagonal": 0,
+    "min_free_diagonal": 3.2374953737966554,
+    "nonfinite_matrix_entries": 0,
+    "connected_components": 1,
+    "unanchored_components": 0,
+    "gate_shield_shared_nodes": 0,
+    "charge_relative_error": 0.0,
+    "pass": true
+  },
+  "linear_operator": {
+    "R_free": 3.0245527092584713e-15,
+    "finite": true,
+    "phi_min": 1.6348951455701332e-09,
+    "phi_max": 34.48675850912666
+  },
+  "complementarity": {
+    "iterations": 1,
+    "primal_max_violation": 0.0,
+    "dual_max_violation": 0.0,
+    "complementarity_max": 0.0,
+    "free_residual_rel": 9.625566587693247e-13,
+    "active_nodes": 0,
+    "active_in_oxide": 0,
+    "finite": true
+  },
+  "potential": {
+    "min": 0.0,
+    "max": 34.48675850912666
+  }
+}

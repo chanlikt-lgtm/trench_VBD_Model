@@ -1,0 +1,38 @@
+{
+  "transform_exactness": 7.105427357601002e-15,
+  "sufficiency_min": 0.015422967618177533,
+  "counter_nodal": {
+    "b": [
+      1.0,
+      1.0,
+      0.0,
+      -1.0,
+      -0.5,
+      -0.5
+    ],
+    "min": -0.24985420990227103
+  },
+  "counter_necessity": {
+    "b": [
+      1.0,
+      1.0,
+      1.0,
+      -1.0,
+      1.0,
+      -1.0
+    ],
+    "min": 3.688001060236923e-07
+  },
+  "constraint_matrix": {
+    "rows": 333660,
+    "cols": 152489,
+    "nnz": 2001960
+  },
+  "census": {
+    "min_u": 0.0,
+    "min_b": 0.0,
+    "n_negative": 0,
+    "n_elements": 0,
+    "n_si": 55610
+  }
+}

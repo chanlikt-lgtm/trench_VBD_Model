@@ -1,0 +1,18 @@
+{
+  "stage": "2A geometry + mesh only",
+  "gmsh_seconds": 1.03,
+  "vertices": 20031,
+  "triangles": 39678,
+  "triangles_Si": 27314,
+  "triangles_SiO2": 12364,
+  "min_triangle_angle_deg": 36.54110767684779,
+  "mean_triangle_angle_deg": 60.0,
+  "max_aspect_ratio": 2.4810384977521998,
+  "max_aspect_ratio_near_tip": 2.299670686251615,
+  "min_area_um2": 1.691623179013087e-05,
+  "inverted_or_zero_area": 0,
+  "tip_radius_um": 0.1,
+  "a_max_um": 0.5750000000000001,
+  "oxide_um": 0.1,
+  "oxide_thickness_at_tip_um": 0.09999999999999998
+}

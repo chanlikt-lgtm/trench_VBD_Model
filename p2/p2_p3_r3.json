@@ -1,0 +1,12 @@
+{
+  "status": "solved",
+  "iters": 9825,
+  "free": 123752,
+  "constraints": 300222,
+  "neutral_area": 0.03506461719269121,
+  "si_area": 1.954549716510229,
+  "min_u": -1.0797865349544679e-11,
+  "active": 2229,
+  "stationarity": 1.9328472458858242e-05,
+  "complementarity": 1.3830703683982084e-12
+}
