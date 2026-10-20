@@ -103,7 +103,9 @@ def cut_intervals(nodes, tris, mat, u, x0, eps, quad):
             st = Mxinv @ (np.array([x0, y0 + t*(y1-y0)]) - P[e, 0])
             l1, l2 = st[0], st[1]
             if quad:
-                return float(np.dot(u[tris[e]], A.shape_vals(l1, l2)))
+                # shape_vals expects the weights of vertices 0 and 1;
+                # (l1,l2) are the coefficients of (P1-P0),(P2-P0).
+                return float(np.dot(u[tris[e]], A.shape_vals(1.0-l1-l2, l1)))
             return float(l1*u[tris[e, 0]] + l2*u[tris[e, 1]] +
                          (1-l1-l2)*u[tris[e, 2]])
 

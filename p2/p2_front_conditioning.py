@@ -57,11 +57,13 @@ def p2_eval(p, ue, x0, ys, order):
         return None
     rel = np.column_stack([np.full_like(ys, x0) - P0[0], ys - P0[1]])
     L = rel @ Minv.T                      # (n,2): L1, L2
-    L1 = L[:, 0]; L2 = L[:, 1]; L3 = 1.0 - L1 - L2
+    a = L[:, 0]; b = L[:, 1]
+    L1 = 1.0 - a - b; L2 = a; L3 = b
     inside = (L1 >= -1e-12) & (L2 >= -1e-12) & (L3 >= -1e-12)
     if not inside.any():
         return None
-    dL1 = Minv[0, 1]; dL2 = Minv[1, 1]; dL3 = -(dL1 + dL2)
+    da = Minv[0, 1]; db = Minv[1, 1]
+    dL1 = -(da + db); dL2 = da; dL3 = db
     Nc = {(0, 1): 4*L1*L2, (1, 2): 4*L2*L3, (2, 0): 4*L3*L1}
     dNc = {(0, 1): 4*(L1*dL2 + L2*dL1), (1, 2): 4*(L2*dL3 + L3*dL2),
            (2, 0): 4*(L3*dL1 + L1*dL3)}
