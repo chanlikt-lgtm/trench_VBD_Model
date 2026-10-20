@@ -20,6 +20,7 @@ MESHES = {
     "r4":  "p2_r4_p2mesh.npz",
     "L1":  "p2_L1_p2mesh.npz",
     "L1b": "p2_L1b_p2mesh.npz",
+    "M2":  "p2_M2_p2mesh.npz",
     "mid": "p2_rmid_p2mesh.npz",
 }
 
@@ -76,5 +77,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
