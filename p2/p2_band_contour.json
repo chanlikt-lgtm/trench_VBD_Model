@@ -1,0 +1,12 @@
+{
+  "n_components": 1,
+  "kept": [
+    1.2492070952858123
+  ],
+  "dropped": [],
+  "total_kept_length": 1.2492070952858123,
+  "l_min": 0.02,
+  "ds": 0.002,
+  "eps": 1e-08,
+  "n_points": 625
+}
