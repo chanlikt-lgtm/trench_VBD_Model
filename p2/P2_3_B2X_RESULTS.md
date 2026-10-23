@@ -117,3 +117,43 @@ order, and **no third level is authorised** regardless of this outcome.
 - `p2_B2X_osqp_checkpoint.npz`, `p2_B2X_osqp.json`
 - `p2_B2X_scaled.npz`, `p2_B2X_scaled.json`
 - `p2_area_a13_b2x.json`, `_b2x_cmp.py`
+
+## 9. Closure (2026-10-23)
+
+The B0-X → B1-X → B2-X comparison is **accepted and closed** at commit
+`2478f82`. The second increment is strictly positive and its supremum
+(`1.662742466e-04`) is below the infimum of the first (`3.424764838e-04`), so the
+reduction is certified in the interval sense, not merely in midpoints.
+
+**No third band level is authorised, and none is justified by this result.**
+The sequence is not a nested family (B0-X has no active band), so its successive
+differences must not be used as Richardson data. A future convergence study
+requires a genuinely comparable mesh family under one frozen policy.
+
+B2-X full-set F7 diagnostics, archived for audit (`p2_B2X_scaled.json`):
+
+```
+active rows      31,723
+stationarity     1.0195393954383166e-10
+complementarity  8.082037731392984e-18
+min slack       -3.2276814617319727e-15
+violations       0
+lambda min       0.0
+oxide residual   4.5094412746102277e-13
+overshoot        1.6785376981639928e-15
+minres info      0
+gate             true
+```
+
+Defensible conclusion, no stronger claim:
+
+> Under the frozen L1b-derived boundary-band policy and exact partial-element
+donor integration, reducing the band target from 0.0040 to 0.00283 µm produced a
+further positive neutral-area increment whose magnitude is less than half the
+preceding B0-X → B1-X increment. This establishes diminishing area sensitivity
+across the tested sequence, but does not establish continuum convergence or an
+asymptotic convergence order.
+
+**Disposition:** P2.3 spatial continuum convergence **OPEN**; P1 **FROZEN**;
+Stage 3 **SUSPENDED**. The `15ec811` eight-endpoint audit remains the comparison
+baseline.
