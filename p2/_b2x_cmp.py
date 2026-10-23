@@ -1,0 +1,15 @@
+﻿import json
+b1=json.load(open("p2_area_a13_b2x.json"))  # B2X
+d=json.load(open("p2_area_a13.json"))
+B1X=(d["B1X"]["lower"],d["B1X"]["upper"])
+B0X=(d["B0X"]["lower"],d["B0X"]["upper"])
+B2X=(b1["lower"],b1["upper"])
+def sub(a,b): return (a[0]-b[1], a[1]-b[0])
+d01=sub(B1X,B0X); d12=sub(B2X,B1X)
+print(f"B0X [{B0X[0]:.15f}, {B0X[1]:.15f}]")
+print(f"B1X [{B1X[0]:.15f}, {B1X[1]:.15f}]")
+print(f"B2X [{B2X[0]:.15f}, {B2X[1]:.15f}]  width {b1['width']:.3e} ({b1['seconds']}s, mixed {b1['mixed']})")
+print(f"\nDeltaA_01X [{d01[0]:+.9e}, {d01[1]:+.9e}]  width {d01[1]-d01[0]:.3e}")
+print(f"DeltaA_12X [{d12[0]:+.9e}, {d12[1]:+.9e}]  width {d12[1]-d12[0]:.3e}")
+print(f"ratio 12/01: [{d12[0]/d01[1]:.4f}, {d12[1]/d01[0]:.4f}]")
+print(f"strictly positive: {d12[0]>0}")

@@ -1,0 +1,6 @@
+﻿s=open("p2_mesh_B1.py",encoding="utf-8").read()
+s=s.replace("H, H_TIP, H_BAND = 0.0085, 0.0034, 0.0040","H, H_TIP, H_BAND = 0.0085, 0.0034, 0.00283")
+s=s.replace('PREFIX = "p2_B1"','PREFIX = "p2_B2"')
+s=s.replace("[B1]","[B2]")
+open("p2_mesh_B2.py","w",encoding="utf-8").write(s)
+print("wrote p2_mesh_B2.py")
