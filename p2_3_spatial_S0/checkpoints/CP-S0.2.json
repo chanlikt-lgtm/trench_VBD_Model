@@ -1,0 +1,66 @@
+{
+  "checkpoint": "CP-S0.2",
+  "status": "PASS",
+  "phase": "design_only",
+  "utc_timestamp": null,
+  "git_commit": "4e5e6d4a233a56982b4cfa04d7589f0e52e2ce12",
+  "source_hashes": {
+    "p2_audit.py": "208419F13A8DC5FE",
+    "p2_exact_donor.py": "6202E14C9FBE608A",
+    "p2_area_bounds.py": "CE325BEE9CCECD74",
+    "p2_exact_metrics.py": "B05A27A552FCE6BB",
+    "p2_nested_consistency.py": "EB3100696F8B97F0",
+    "p2_topology_clean.py": "BBBE488CEA1A7DAE",
+    "p2_mesh_B2.py": "B0746D15BE064CF5",
+    "p2_band_contour.npz": "D2A00BECA0D38F01"
+  },
+  "config_hashes": {},
+  "commands": [],
+  "tests_and_metrics": {
+    "tests": {
+      "donor": {
+        "full_identity_max_err": 1.3877787807814457e-17,
+        "body_side_max": 0.0,
+        "cut_sum_err": 8.326672684688674e-17,
+        "cut_min_component": -0.014399999999999996,
+        "cut_area": 0.17999999999999994,
+        "note": "negative vertex components are expected: N=L(2L-1) is sign-changing",
+        "passed": true
+      },
+      "area": {
+        "zero_field": [
+          0.5,
+          0.5
+        ],
+        "zero_ok": true,
+        "positive_field": [
+          0.0,
+          0.0
+        ],
+        "positive_ok": true,
+        "linear_fixture": [
+          0.375,
+          0.37500190734135685
+        ],
+        "linear_ok": true,
+        "passed": true
+      },
+      "front": {
+        "max_value_err": 2.220446049250313e-16,
+        "max_grad_err": 8.881784197001252e-16,
+        "passed": true
+      },
+      "global": {
+        "sum_f_over_rho": 1.5752691926529643,
+        "exact_charged": 1.5752691926529394,
+        "match": true
+      },
+      "all_passed": true
+    },
+    "fixture_defects_found": 2
+  },
+  "output_artifacts": [],
+  "deviations": [],
+  "reviewer": null,
+  "next_authorized_action": "review master field (CP-S0.3)"
+}

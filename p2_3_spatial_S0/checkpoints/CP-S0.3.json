@@ -1,0 +1,52 @@
+{
+  "checkpoint": "CP-S0.3",
+  "status": "PASS_WITH_ESTIMATES",
+  "phase": "design_only",
+  "utc_timestamp": null,
+  "git_commit": "4e5e6d4a233a56982b4cfa04d7589f0e52e2ce12",
+  "source_hashes": {
+    "p2_audit.py": "208419F13A8DC5FE",
+    "p2_exact_donor.py": "6202E14C9FBE608A",
+    "p2_area_bounds.py": "CE325BEE9CCECD74",
+    "p2_exact_metrics.py": "B05A27A552FCE6BB",
+    "p2_nested_consistency.py": "EB3100696F8B97F0",
+    "p2_topology_clean.py": "BBBE488CEA1A7DAE",
+    "p2_mesh_B2.py": "B0746D15BE064CF5",
+    "p2_band_contour.npz": "D2A00BECA0D38F01"
+  },
+  "config_hashes": {},
+  "commands": [],
+  "tests_and_metrics": {
+    "levels": [
+      {
+        "level": "S0-L0",
+        "factor": 1.0,
+        "band": 0.004,
+        "background": 0.0085
+      },
+      {
+        "level": "S0-L1",
+        "factor": 0.7071,
+        "band": 0.0028284,
+        "background": 0.00601
+      },
+      {
+        "level": "S0-L2",
+        "factor": 0.5,
+        "band": 0.002,
+        "background": 0.00425
+      }
+    ],
+    "resource_anchor": "B2-X 125579 elems / 252290 DOFs / 680 MB / 5450 iters / 697 s area",
+    "estimates": {
+      "L0": "115k elems, ~10 min",
+      "L1": "230k, ~25 min",
+      "L2": "460k, ~60 min"
+    },
+    "pilot_required": true
+  },
+  "output_artifacts": [],
+  "deviations": [],
+  "reviewer": null,
+  "next_authorized_action": "assemble S0 package (CP-S0.4)"
+}

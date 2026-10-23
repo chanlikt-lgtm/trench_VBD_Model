@@ -1,0 +1,40 @@
+{
+  "donor": {
+    "full_identity_max_err": 1.3877787807814457e-17,
+    "body_side_max": 0.0,
+    "cut_sum_err": 8.326672684688674e-17,
+    "cut_min_component": -0.014399999999999996,
+    "cut_area": 0.17999999999999994,
+    "note": "negative vertex components are expected: N=L(2L-1) is sign-changing",
+    "passed": true
+  },
+  "area": {
+    "zero_field": [
+      0.5,
+      0.5
+    ],
+    "zero_ok": true,
+    "positive_field": [
+      0.0,
+      0.0
+    ],
+    "positive_ok": true,
+    "linear_fixture": [
+      0.375,
+      0.37500190734135685
+    ],
+    "linear_ok": true,
+    "passed": true
+  },
+  "front": {
+    "max_value_err": 2.220446049250313e-16,
+    "max_grad_err": 8.881784197001252e-16,
+    "passed": true
+  },
+  "global": {
+    "sum_f_over_rho": 1.5752691926529643,
+    "exact_charged": 1.5752691926529394,
+    "match": true
+  },
+  "all_passed": true
+}

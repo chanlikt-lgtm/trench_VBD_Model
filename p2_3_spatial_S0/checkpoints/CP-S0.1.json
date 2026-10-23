@@ -1,0 +1,29 @@
+{
+  "checkpoint": "CP-S0.1",
+  "status": "PASS",
+  "phase": "design_only",
+  "utc_timestamp": null,
+  "git_commit": "4e5e6d4a233a56982b4cfa04d7589f0e52e2ce12",
+  "source_hashes": {
+    "p2_audit.py": "208419F13A8DC5FE",
+    "p2_exact_donor.py": "6202E14C9FBE608A",
+    "p2_area_bounds.py": "CE325BEE9CCECD74",
+    "p2_exact_metrics.py": "B05A27A552FCE6BB",
+    "p2_nested_consistency.py": "EB3100696F8B97F0",
+    "p2_topology_clean.py": "BBBE488CEA1A7DAE",
+    "p2_mesh_B2.py": "B0746D15BE064CF5",
+    "p2_band_contour.npz": "D2A00BECA0D38F01"
+  },
+  "config_hashes": {},
+  "commands": [],
+  "tests_and_metrics": {
+    "target": "Bernstein-bounded area of {u<=1e-8} in charged Si",
+    "geometry": "G-fixed polygonal domain",
+    "geometry_budget": "declared, pending arc study",
+    "front": "separate diagnostic series"
+  },
+  "output_artifacts": [],
+  "deviations": [],
+  "reviewer": null,
+  "next_authorized_action": "proceed to CP-S0.2"
+}

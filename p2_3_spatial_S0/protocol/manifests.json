@@ -1,0 +1,83 @@
+{
+  "study": "P2.3-S0 controlled spatial convergence",
+  "phase": "design_only",
+  "git_commit": "4e5e6d4a233a56982b4cfa04d7589f0e52e2ce12",
+  "code_hashes": {
+    "p2_audit.py": "208419F13A8DC5FE",
+    "p2_exact_donor.py": "6202E14C9FBE608A",
+    "p2_area_bounds.py": "CE325BEE9CCECD74",
+    "p2_exact_metrics.py": "B05A27A552FCE6BB",
+    "p2_nested_consistency.py": "EB3100696F8B97F0",
+    "p2_topology_clean.py": "BBBE488CEA1A7DAE",
+    "p2_mesh_B2.py": "B0746D15BE064CF5",
+    "p2_band_contour.npz": "D2A00BECA0D38F01"
+  },
+  "protocol_sha256": "fccd16a8f19f9d0dc6e57b446ca8a026294c127895a505daf31bd4066d12d97f",
+  "model": {
+    "pde": "2D electrostatics, conforming P2",
+    "V_D": 34.274208536,
+    "N_D_cm3": 6.9e+16,
+    "rho": 1248.5638,
+    "body_cut_um": 0.54,
+    "oxide_eps": "A.EPS_OX",
+    "si_eps": "A.EPS_SI"
+  },
+  "size_field": {
+    "rule": "h_k = r^k h0, r = 2^-1/2, global",
+    "band_core_um": 0.004,
+    "band_dist_um": 0.04,
+    "transition_um": 0.02,
+    "background_um": 0.0085,
+    "tip_um": 0.0034,
+    "band_component": {
+      "n": 1,
+      "length_um": 1.2492,
+      "x": [
+        2.333,
+        2.42
+      ],
+      "y": [
+        -0.575,
+        0.575
+      ],
+      "points": 625,
+      "hash": "D2A00BECA0D38F01"
+    }
+  },
+  "levels": [
+    {
+      "level": "S0-L0",
+      "factor": 1.0,
+      "band": 0.004,
+      "background": 0.0085
+    },
+    {
+      "level": "S0-L1",
+      "factor": 0.7071,
+      "band": 0.0028284,
+      "background": 0.00601
+    },
+    {
+      "level": "S0-L2",
+      "factor": 0.5,
+      "band": 0.002,
+      "background": 0.00425
+    }
+  ],
+  "solver": {
+    "osqp": "checkpoint-first, eps 1e-8/1e-8, max_iter 30000",
+    "polish": "matrix-free scaled MINRES + residual correction, sign [-stat,+slack]",
+    "f7": "full-set gate, tolerances unchanged"
+  },
+  "area": {
+    "estimator": "Bernstein branch-and-bound, outward intervals",
+    "AREA_TOL": 1e-13,
+    "MAX_DEPTH": 24,
+    "EPS": 1e-08
+  },
+  "authorizations": {
+    "mesh_generation": false,
+    "solve": false,
+    "production": false
+  }
+}
