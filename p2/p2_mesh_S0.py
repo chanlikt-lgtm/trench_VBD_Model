@@ -23,6 +23,7 @@ import p2_audit as A
 R = 2.0**-0.5
 H0 = dict(band=0.0040, background=0.0085, tip=0.0034)
 DIST_MIN, DIST_MAX = 0.04, 0.06
+N_ARC = 65          # canonical chord count per circular arc (64 chords)
 
 
 def build(level, outdir):
@@ -45,6 +46,15 @@ def build(level, outdir):
     tags = [occ.addPoint(float(x), float(y), 0.0, hb) for x, y in sel]
     spl = occ.addSpline(tags)
     occ.synchronize()
+
+    # Canonical geometry: force a fixed chord count on every circular arc so the
+    # polygonal domain is identical at all levels (CP-M1a). Query by curve type
+    # because OCC fragmentation renumbers entities.
+    arcs = [abs(t) for d, t in gmsh.model.getEntities(1)
+            if gmsh.model.getType(1, abs(t)) == "Circle"]
+    for t in arcs:
+        gmsh.model.mesh.setTransfiniteCurve(t, N_ARC)
+    print(f"[{prefix}] canonical arcs: {len(arcs)} x {N_ARC} nodes", flush=True)
 
     fd = gmsh.model.mesh.field.add("Distance")
     gmsh.model.mesh.field.setNumbers(fd, "CurvesList", [spl])
@@ -122,7 +132,7 @@ def build(level, outdir):
                       np.linalg.norm(P[:, 2]-P[:, 1], axis=1),
                       np.linalg.norm(P[:, 0]-P[:, 2], axis=1)], 1)
     emax = edges.max(1); hmin = 2*area/np.maximum(emax, 1e-30)
-    rec = dict(level=level, rk=rk, band=hb, background=hg, tip=ht,
+    rec = dict(level=level, rk=rk, n_arc=N_ARC, n_arcs=len(arcs), band=hb, background=hg, tip=ht,
                nodes=int(len(nodes)), elements=int(len(tris)), counts=counts,
                si_area=float(area[si].sum()), exact_charged=float(exact),
                centroid_charged=float(area[charged].sum()),
