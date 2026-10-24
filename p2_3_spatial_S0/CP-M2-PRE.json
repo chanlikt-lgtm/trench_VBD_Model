@@ -1,0 +1,108 @@
+{
+  "L0": {
+    "nodes": 232552,
+    "elements": 115123,
+    "p2_dofs_raw": 232552,
+    "charged_elements": 59322,
+    "bernstein_rows": 355932,
+    "orphan_nodes": 1278,
+    "midside_max_dev": 0.0,
+    "quality": {
+      "min_angle": 25.756966152038824,
+      "p01_angle": 47.111254149785786,
+      "p05_angle": 54.555582314760095,
+      "aspect_max": 3.6692117649747544,
+      "aspect_p99": 1.7293768458304888,
+      "n_aspect_gt3": 137,
+      "n_aspect_gt5": 0,
+      "n_inverted": 82494,
+      "min_area": 2.5705642331203343e-06
+    },
+    "p2_dofs_compacted": 231274,
+    "orientation": {
+      "0": {
+        "n": 71527,
+        "pos": 0,
+        "neg": 71527,
+        "zero": 0
+      },
+      "1": {
+        "n": 21662,
+        "pos": 21662,
+        "neg": 0,
+        "zero": 0
+      },
+      "2": {
+        "n": 6352,
+        "pos": 3176,
+        "neg": 3176,
+        "zero": 0
+      },
+      "3": {
+        "n": 15582,
+        "pos": 7791,
+        "neg": 7791,
+        "zero": 0
+      }
+    },
+    "donor_sum": 1.5752528820381035,
+    "donor_exact": 1.5752528820380198,
+    "donor_delta": 8.37108160567368e-14
+  },
+  "L1": {
+    "nodes": 460914,
+    "elements": 228917,
+    "p2_dofs_raw": 460914,
+    "charged_elements": 118290,
+    "bernstein_rows": 709740,
+    "orphan_nodes": 1626,
+    "midside_max_dev": 0.0,
+    "quality": {
+      "min_angle": 28.924100872685962,
+      "p01_angle": 47.59964247165645,
+      "p05_angle": 55.42727697921687,
+      "aspect_max": 3.5644135987010896,
+      "aspect_p99": 1.728684902415618,
+      "n_aspect_gt3": 60,
+      "n_aspect_gt5": 0,
+      "n_inverted": 164467,
+      "min_area": 1.7435029682323338e-06
+    },
+    "p2_dofs_compacted": 459288,
+    "orientation": {
+      "0": {
+        "n": 142649,
+        "pos": 0,
+        "neg": 142649,
+        "zero": 0
+      },
+      "1": {
+        "n": 42634,
+        "pos": 42634,
+        "neg": 0,
+        "zero": 0
+      },
+      "2": {
+        "n": 12620,
+        "pos": 6309,
+        "neg": 6311,
+        "zero": 0
+      },
+      "3": {
+        "n": 31014,
+        "pos": 15507,
+        "neg": 15507,
+        "zero": 0
+      }
+    },
+    "donor_sum": 1.5752528820375786,
+    "donor_exact": 1.5752528820380207,
+    "donor_delta": -4.4209080840573733e-13
+  },
+  "PRE1": {
+    "l0_boundary_nodes": 1029,
+    "l1_boundary_nodes": 1403,
+    "max_l1_node_to_l0_segment": 1.1102230246251565e-16,
+    "p99": 1.1102230246251565e-16
+  }
+}
