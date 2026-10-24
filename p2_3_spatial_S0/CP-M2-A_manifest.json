@@ -1,0 +1,108 @@
+{
+  "checkpoint": "CP-M2-A",
+  "status": "FROZEN",
+  "provenance": {
+    "design": "e937926",
+    "repair": "1c8d4df",
+    "preflight": "82a4a1b/fefbba1"
+  },
+  "mesh": {
+    "L0": {
+      "sha256": "58abc85e86e3d17cd6a76ade85ae90137fc12c58d291ef2c07b1a4759712d241",
+      "nodes": 232552,
+      "compacted": 231274,
+      "elements": 115123,
+      "charged": 59322,
+      "bernstein_rows": 355932
+    },
+    "L1": {
+      "sha256": "7fa1c69da097612960a2668335a014894a0da4d9ff5c96d623e10fcae0a3d1bb",
+      "nodes": 460914,
+      "compacted": 459288,
+      "elements": 228917,
+      "charged": 118290,
+      "bernstein_rows": 709740
+    }
+  },
+  "band_sha256": "d2a00beca0d38f0183669790cbabc8864d6d467c92c0b609ac85be0ed62753b3",
+  "geometry": {
+    "policy": "G-fixed polygonal domain",
+    "arcs": 4,
+    "nodes_per_arc": 65,
+    "chords_per_90deg": 64,
+    "boundary": "frozen L1b contour, 625 resampled points"
+  },
+  "discretization": {
+    "space": "conforming straight-sided P2 (6-node)",
+    "element_order": 2,
+    "second_order_linear": 1
+  },
+  "donor": {
+    "rule": "exact clipped-element P2 integration, T cap {x>=0.54}",
+    "quadrature": "3-point degree-2 in parent barycentrics",
+    "centroid_fallback": false
+  },
+  "obstacle": {
+    "domain": "charged silicon only",
+    "rows": "6 per charged element",
+    "construction": "Bernstein nonnegativity, unchanged"
+  },
+  "solver": {
+    "osqp": {
+      "eps_abs": 1e-08,
+      "eps_rel": 1e-08,
+      "max_iter": 30000,
+      "scaling": 10,
+      "polishing": false,
+      "verbose": false
+    },
+    "polish": {
+      "method": "matrix-free scaled MINRES + residual correction",
+      "rtol": 1e-08,
+      "maxiter": 8000,
+      "nref": 6,
+      "correction_sign": "[-stat, +slackW]"
+    }
+  },
+  "f7": {
+    "stationarity": 1e-08,
+    "complementarity": 1e-10,
+    "min_slack": -1e-09,
+    "violations": 0,
+    "lambda_min": -1e-09,
+    "oxide": 1e-09,
+    "overshoot": 1e-09
+  },
+  "checkpointing": {
+    "save": [
+      "x",
+      "y",
+      "idx"
+    ],
+    "reload_verify": true,
+    "before": "polishing",
+    "after": "OSQP status=solved"
+  },
+  "software": {
+    "python": "3.13.15",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "osqp": "1.1.3",
+    "gmsh": "4.15.2",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "code_sha256": {
+    "p2_audit.py": "208419f13a8dc5fe8afa60ab28d0f637c84d23426a18c73815ce9f89cf867d09",
+    "p2_exact_donor.py": "6202e14c9fbe608aabafcf4021092422ce22c551105b5d41173539f9f48f775b",
+    "p2_area_bounds.py": "ce325bee9ccecd74a7ea7b559aae700b60b9230c1b9a74004cb01e85f3a928c6",
+    "p2_exact_metrics.py": "b05a27a552fce6bb84bf5ac36b22bf201b85d1062dc7018e1448ec021c4c5c84",
+    "p2_nested_consistency.py": "eb3100696f8b97f080c479796f59e55200280238286df9b63f8cdf07fdfa5ce5",
+    "p2_bernstein.py": "6141528490e1f7b4fcffefc656232194773545eef0cb0d6c4270134cf1edf315",
+    "p2_mesh_S0.py": "2b4138188fb2fdea1719c536320059bf83b409d215c6c7f0bcab927782f10ca8"
+  },
+  "deviations_from_validated_X": [
+    "mesh: canonical 64-chord arcs (geometry freeze)",
+    "DOF count differs from B-X family",
+    "no other change to formulation or tolerances"
+  ]
+}

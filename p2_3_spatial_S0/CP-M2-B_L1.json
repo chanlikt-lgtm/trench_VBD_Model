@@ -1,0 +1,53 @@
+{
+  "level": "L1",
+  "nodes_raw": 460914,
+  "nodes_compacted": 459288,
+  "elements": 228917,
+  "dofs_total": 459288,
+  "dofs_free": 320541,
+  "dofs_fixed": 138747,
+  "charged_elements": 118290,
+  "bernstein_rows": 709740,
+  "K": {
+    "shape": [
+      459288,
+      459288
+    ],
+    "nnz": 5270904,
+    "mb": 62.072757720947266
+  },
+  "Kff": {
+    "shape": [
+      320541,
+      320541
+    ],
+    "nnz": 3663465,
+    "mb": 43.14780044555664
+  },
+  "C_F": {
+    "shape": [
+      709740,
+      320541
+    ],
+    "nnz": 4245738,
+    "mb": 49.81138610839844
+  },
+  "finite": {
+    "K": true,
+    "f": true,
+    "C": true,
+    "Kff": true
+  },
+  "donor_sum": 1.5752528820375786,
+  "seconds": {
+    "assembly": 1.8,
+    "donor": 15.1,
+    "bernstein": 0.2,
+    "total": 18.1
+  },
+  "peak_rss_mb": 544.8,
+  "ram": {
+    "total_mb": 24467,
+    "avail_at_start_mb": 4213
+  }
+}
