@@ -64,5 +64,7 @@
       "total": 24467
     }
   },
-  "peak_rss_mb": 576.9
+  "peak_rss_mb": 576.9,
+  "minres_info": "NOT_RECORDED",
+  "minres_info_note": "The MINRES return flag was not serialised in this run. F7 numeric certification stands independently; the solver-return-code provenance is incomplete. Serialisation is mandatory for future solves."
 }

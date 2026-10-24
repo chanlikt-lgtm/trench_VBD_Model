@@ -1,0 +1,15 @@
+{
+  "solution": "S0-L0",
+  "commit": "a3a5248",
+  "AREA_TOL": 1e-13,
+  "MAX_DEPTH": 24,
+  "min_element_area": 2.5705642331203343e-06,
+  "max_terminating_depth": 12.31,
+  "depth_limit_binding": false,
+  "lower": 0.022074881123311834,
+  "upper": 0.022075207649363562,
+  "width": 3.2652605172836524e-07,
+  "charged": 59322,
+  "mixed": 626,
+  "seconds": 802.5
+}
