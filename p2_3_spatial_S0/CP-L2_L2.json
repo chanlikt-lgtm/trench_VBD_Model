@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "mesh_sha": "7E6CF12400B0A1308DC23BC7DEC89DA96EF30766784C90D0CB433166523C9136",
+  "dofs": 638124,
+  "rows": 1413522,
+  "fixed": 275471,
+  "osqp": {
+    "status": "solved",
+    "iters": 11125,
+    "obj": -161356.31625669886,
+    "pri": 1.5648925905969853e-08,
+    "dua": 1.4254362309429598e-09
+  },
+  "checkpoint": {
+    "path": "../p2_3_spatial_S0/CP-L2_L2_checkpoint.npz",
+    "identical": true,
+    "x_shape": [
+      638124
+    ],
+    "y_shape": [
+      1413522
+    ]
+  },
+  "active": 65523,
+  "repairs": [
+    {
+      "added": 0,
+      "dropped": 6
+    }
+  ],
+  "minres_info": [
+    0,
+    0
+  ],
+  "f7": {
+    "stationarity": 3.2197969451836566e-10,
+    "complementarity": 8.998464193576114e-19,
+    "min_slack": -8.669877105500711e-16,
+    "violations": 0,
+    "lam_min": 0.0,
+    "oxide": 5.011619036907769e-13,
+    "overshoot": 5.598606265926994e-16,
+    "gate": true
+  },
+  "marks": {
+    "start": {
+      "t": 0.0,
+      "rss": 91,
+      "avail": 8632,
+      "total": 24467
+    },
+    "after_assembly": {
+      "t": 33.0,
+      "rss": 542,
+      "avail": 8242,
+      "total": 24467
+    },
+    "after_osqp": {
+      "t": 2285.5,
+      "rss": 1015,
+      "avail": 8647,
+      "total": 24467
+    },
+    "after_polish": {
+      "t": 3467.1,
+      "rss": 550,
+      "avail": 9052,
+      "total": 24467
+    }
+  },
+  "peak_rss_mb": 1950.5
+}
