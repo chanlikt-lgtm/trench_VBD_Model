@@ -1,0 +1,27 @@
+{
+  "solution": "S0-L2",
+  "commit": "6e8d9e1",
+  "AREA_TOL": 1e-13,
+  "MAX_DEPTH": 24,
+  "min_element_area": 8.365465550288871e-07,
+  "max_terminating_depth": 11.5,
+  "depth_limit_binding": false,
+  "lower": 0.022293016138576278,
+  "upper": 0.02229334603989133,
+  "width": 3.2990131505067355e-07,
+  "charged": 235587,
+  "mixed": 1262,
+  "seconds": 813.0,
+  "free_dofs": 638124,
+  "compacted_dofs": 913595,
+  "provenance": {
+    "mesh_sha": "7E6CF12400B0A1308DC23BC7DEC89DA96EF30766784C90D0CB433166523C9136",
+    "mesh_expected": "7E6CF12400B0A1308DC23BC7DEC89DA96EF30766784C90D0CB433166523C9136",
+    "mesh_match": true,
+    "solution_sha": "66DFC1563A2CCE3463C6887B3796E143E9B3F0D72EFCA498EA50FF923D477C7F",
+    "f7_gate": true,
+    "f7_stationarity": 3.2197969451836566e-10,
+    "free_dofs": 638124,
+    "compacted_dofs": 913595
+  }
+}
