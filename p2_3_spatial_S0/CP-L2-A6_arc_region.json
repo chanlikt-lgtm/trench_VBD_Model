@@ -1,0 +1,50 @@
+{
+  "region": "R_arc: |dist to canonical arc| <= 0.01 um",
+  "radius": 0.10000000000000003,
+  "tol": 0.01,
+  "AREA_TOL": 1e-13,
+  "levels": {
+    "L0": {
+      "arc_lower": 0.0,
+      "arc_upper": 1.3629548580685085e-07,
+      "arc_width": 1.3629548580685085e-07,
+      "candidates": 377,
+      "seconds": 514.4,
+      "whole": [
+        0.022074881123311834,
+        0.022075207649363562
+      ],
+      "comp_lower": 0.022074744827826027,
+      "comp_upper": 0.022075207649363562,
+      "comp_note": "derived by set subtraction, conservative"
+    },
+    "L1": {
+      "arc_lower": 0.0,
+      "arc_upper": 1.5128015025152495e-07,
+      "arc_width": 1.5128015025152495e-07,
+      "candidates": 489,
+      "seconds": 435.1,
+      "whole": [
+        0.022217431654472784,
+        0.02221779043663653
+      ],
+      "comp_lower": 0.022217280374322534,
+      "comp_upper": 0.02221779043663653,
+      "comp_note": "derived by set subtraction, conservative"
+    },
+    "L2": {
+      "arc_lower": 0.0,
+      "arc_upper": 1.3251950074976644e-07,
+      "arc_width": 1.3251950074976644e-07,
+      "candidates": 849,
+      "seconds": 489.4,
+      "whole": [
+        0.022293016138576278,
+        0.02229334603989133
+      ],
+      "comp_lower": 0.022292883619075526,
+      "comp_upper": 0.02229334603989133,
+      "comp_note": "derived by set subtraction, conservative"
+    }
+  }
+}
