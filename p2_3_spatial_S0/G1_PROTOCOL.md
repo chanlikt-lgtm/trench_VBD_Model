@@ -92,6 +92,40 @@ aspect tail, zero-area count, per-face winding, P2 midside deviation, exact dono
 conservation, and the arc-region area enclosure at the same fixed region used in
 CP-L2-A6.
 
+## 4A. AMENDMENT (frozen) — paired boundary subdivision
+
+Amends §3. The original design compared a 64-chord C1 polygon against a 128-chord
+C2 polygon, which changed boundary geometry **and** boundary vertex count at the
+same time. The frozen protocol replaces this with a paired construction:
+
+For every original chord `P_i → P_{i+1}` of the 64-chord polygon `G0`:
+
+- **C1:** insert `Q_i = (P_i + P_{i+1})/2` **on the existing straight segment**.
+  `G0` is unchanged; each original chord becomes two collinear segments.
+- **C2:** insert `Q_i'` on the **analytic circle at the half-angle**. The two
+  segments are chords of the refined polygon `G1`.
+
+Consequences, frozen:
+
+```
+C1: 128 straight segments, 129 vertices per 90° arc, domain G0 exactly
+C2: 128 straight segments, 129 vertices per 90° arc, domain G1
+boundary vertices are indexable 0..128 per arc in both controls
+displacement Q_i' - Q_i is explicit and is zero at the original 64 vertices
+```
+
+This removes the vertex-multiplicity confound but does **not** make the
+triangulations identical; interior element placement, stiffness and active-set
+response remain potential confounders and must be reported.
+
+**Implementation note.** Preserving `G0` while doubling the vertex count cannot be
+done by raising the transfinite node count on the OCC circle — that would place
+the extra nodes on the arc and silently convert C1 into C2. C1 therefore requires
+a **polyline-arc geometry builder**: the arc is represented as explicit straight
+segments through the canonical vertices, and the midpoint subdivision is applied
+to those segments. The frozen `mesh_stage2b.py` builder is not modified; G1 uses
+its own geometry module.
+
 ## 5. Checkpoint gates
 
 | Gate | Required evidence | PASS condition |
